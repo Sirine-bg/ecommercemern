@@ -40,6 +40,7 @@ function OrderDetails() {
         const {name, value} = e.target;
         setPayement({...payement, [name]:value})
     }
+    const handleChange=()=>setCart({...cart, [cart.etat]:"Confirmed"});
      
     const paymentSubmit = async e =>{
         // cart.splice(0,cart.length)
@@ -112,7 +113,7 @@ function OrderDetails() {
             </table>
               
                 <div className="row">
-                    <button type="submit">Confirm my order</button>
+                    <button type="submit"onClick={{handleChange}} >Confirm my order</button>
                    
                 </div> 
             </form>

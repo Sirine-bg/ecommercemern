@@ -20,7 +20,10 @@ const paymentCtrl = {
          const newPayment = new Payments({
             cart, name,phone, email,  adress
              })
-        
+             cart.filter(item => {
+                return sold(item._id, item.quantity, item.sold)
+            })
+          
             await newPayment.save()
             res.json({msg: "Payment Succes!"})
         } catch (err) {
@@ -31,6 +34,10 @@ const paymentCtrl = {
 
 
 }
-
+const sold = async (id, quantity, oldSold) =>{
+    await Products.findOneAndUpdate({_id: id}, {
+        sold: quantity + oldSold
+    })
+}
 
 module.exports = paymentCtrl

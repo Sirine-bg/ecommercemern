@@ -32,7 +32,16 @@ const productSchema = new mongoose.Schema({
     category:{
         type: String,
         required: true
+    },
+    sold:{
+        type: Number,
+        default: 0
+    },
+    etat:{
+        type:String,
+        default:"INprogress"
     }
+
     
 }, {
     timestamps: true 

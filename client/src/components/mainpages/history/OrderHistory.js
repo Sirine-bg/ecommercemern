@@ -34,7 +34,8 @@ function OrderHistory() {
             <table>
                 <thead>
                     <tr>
-                        <th>Articles</th>
+                        <th>Articles name</th>
+                        <th>Articles quantity </th>
                         <th>Name </th>
                         <th>Phone</th>
                         <th>Address</th>
@@ -45,8 +46,17 @@ function OrderHistory() {
                     {
                         history.map(items => (
                             <tr key={items._id}>
-                                <td> {items.cart.map(x => ([x.title]))}   </td>
-                                {/* <td></td> */}
+                                <td> {items.cart.map(el =>(
+                                    
+                                    <h3>{el.title}</h3>
+                                   
+                                ) )}   </td>
+                                <td> {items.cart.map(el =>(
+                                    
+                                    
+                                    <h4> {el.quantity} </h4>
+                                    
+                                ) )}     </td>
 
                                 <td>{items.name}</td>
                                 <td>{items.phone}</td>

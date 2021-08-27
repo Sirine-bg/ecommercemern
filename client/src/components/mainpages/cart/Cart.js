@@ -77,9 +77,8 @@ const removeProduct = id =>{
         <div>
          {
                 cart.map(product => (
-                    <div className="detail cart" key={product._id}>
+                     <div className="detail cart" key={product._id}>
                         <img src={product.images.url} alt="" />
-
                         <div className="box-detail">
                             <h2>{product.title}</h2>
 
